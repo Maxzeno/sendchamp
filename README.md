@@ -1,9 +1,10 @@
-# sendchamp-py
+# sendchamp
+
 Sendchamp API wrapper
 
 ## Installation
 
-```pip install sendchamp-py```
+`pip install sendchamp`
 
 ```py
 from sendchamp import Sendchamp
@@ -11,47 +12,51 @@ from sendchamp import Sendchamp
 sendchamp = Sendchamp(public_key=PUBLIC_KEY)
 ```
 
-
-## Sendchamp API Methods 
+## Sendchamp API Methods
 
 1. **[SMS](#sms)**
-   * Send SMS
-   * Create Sender ID
-   * SMS Delivery report
-   * Bulk SMS Delivery report
-  
+
+   - Send SMS
+   - Create Sender ID
+   - SMS Delivery report
+   - Bulk SMS Delivery report
+
 2. **[Voice](#voice)**
-   * Text-to-Speech
-   * Audio File-to-voice
-   * Delivery Report
-  
+
+   - Text-to-Speech
+   - Audio File-to-voice
+   - Delivery Report
+
 3. **Customer**
-   * [Customer](#customer)
-     * Create Customer
-     * List Customer
-     * Update Customer
-     * Delete Customer
-    
-   * [Customer Group](#customer-group)
-     * Create customer group
-     * List customer groups
-     * Update customer group
-  
+
+   - [Customer](#customer)
+
+     - Create Customer
+     - List Customer
+     - Update Customer
+     - Delete Customer
+
+   - [Customer Group](#customer-group)
+     - Create customer group
+     - List customer groups
+     - Update customer group
+
 4. **[Whatsapp](#whatsapp)**
-   * Send Template
-   * Send Message
-   * Send Video
-   * Send Audio
-   * Send Location
-   * Send Sticker
+
+   - Send Template
+   - Send Message
+   - Send Video
+   - Send Audio
+   - Send Location
+   - Send Sticker
 
 5. **[Verification](#verification)**
-   * Send OTP
-   * Confirm OTP
+
+   - Send OTP
+   - Confirm OTP
 
 6. **[Email](#email)**
-   * Send Email
-
+   - Send Email
 
 ## SMS
 
@@ -166,15 +171,16 @@ data, error = sendchamp.customer.delete(uid)
 
 ```py
 data, error = sendchamp.customer.group.create(
-                    name="Waitlist", 
+                    name="Waitlist",
                     description="first users"
               )
 ```
 
 **List**
+
 ```py
 data, error = sendchamp.customer.group.list(
-                  name="Waitlist", 
+                  name="Waitlist",
                   sample="sample",
                   use_case="use case"
               )
@@ -185,7 +191,7 @@ data, error = sendchamp.customer.group.list(
 ```py
 data, error   = sendchamp.customer.group.update(
     uid=uid,
-    name="Premium Users", 
+    name="Premium Users",
     description="Paying users")
 ```
 
@@ -261,14 +267,14 @@ data, error = sendchamp.whatsapp.send_audio(
 
 ```py
 data, error = sendchamp.verification.send_otp(
-    channel="channel", 
-    sender="234810000000", 
-    token_type="numeric", 
-    token_length=5, 
-    expiration_time=4, 
+    channel="channel",
+    sender="234810000000",
+    token_type="numeric",
+    token_length=5,
+    expiration_time=4,
     customer_email_address="customer@gmail.com",
-    customer_mobile_number="234811111111", 
-    meta_data={}, 
+    customer_mobile_number="234811111111",
+    meta_data={},
     token="your_token"
 )
 ```
